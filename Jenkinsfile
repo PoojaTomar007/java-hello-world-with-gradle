@@ -1,12 +1,14 @@
 node {
+    stage('Init') {
+    sh "/opt/gradle/gradle-6.4.1/bin/gradle init"
+    }
   stage('BUILD') {
-    sh "chmod -R 755 gradlew"
-    sh "./gradlew build"
+    sh "/opt/gradle/gradle-6.4.1/bin/gradle build"
   }
   stage('TEST') {
-    sh "./gradlew build test"
+    sh "/opt/gradle/gradle-6.4.1/bin/gradle build test"
   }
   stage('CLEAN') {
-    sh "./gradlew build clean"
+    sh "/opt/gradle/gradle-6.4.1/bin/gradle build clean"
   }
 }
